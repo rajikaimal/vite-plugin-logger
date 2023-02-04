@@ -20,7 +20,7 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 // index.ts
 var vite_plugin_logger_exports = {};
 __export(vite_plugin_logger_exports, {
-  default: () => vite_plugin_logger_default
+  vitePluginLogger: () => vitePluginLogger
 });
 module.exports = __toCommonJS(vite_plugin_logger_exports);
 var vitePluginLogger = (config) => {
@@ -30,7 +30,7 @@ var vitePluginLogger = (config) => {
     apply: "serve",
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
-        if (req.method && config.excludeReqType.find(
+        if (req.method && config.excludeReqType && config.excludeReqType.find(
           (type) => {
             var _a;
             return type === ((_a = req.method) == null ? void 0 : _a.toLowerCase());
@@ -50,6 +50,7 @@ var vitePluginLogger = (config) => {
     }
   };
 };
-var vite_plugin_logger_default = vitePluginLogger;
 // Annotate the CommonJS export names for ESM import in node:
-0 && (module.exports = {});
+0 && (module.exports = {
+  vitePluginLogger
+});

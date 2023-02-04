@@ -6,7 +6,7 @@ var vitePluginLogger = (config) => {
     apply: "serve",
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
-        if (req.method && config.excludeReqType.find(
+        if (req.method && config.excludeReqType && config.excludeReqType.find(
           (type) => {
             var _a;
             return type === ((_a = req.method) == null ? void 0 : _a.toLowerCase());
@@ -26,7 +26,6 @@ var vitePluginLogger = (config) => {
     }
   };
 };
-var vite_plugin_logger_default = vitePluginLogger;
 export {
-  vite_plugin_logger_default as default
+  vitePluginLogger
 };

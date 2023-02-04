@@ -3,13 +3,13 @@ import { ViteDevServer, PluginOption } from "vite";
 interface LoggerConfig {
   msg: string;
   logLevel: LogLevel;
-  excludeReqType: Array<ReqType>;
+  excludeReqType?: Array<ReqType>;
 }
 
 type LogLevel = "info" | "warn" | "error";
 type ReqType = "get" | "post" | "patch" | "put" | "delete";
 
-const vitePluginLogger = (config: LoggerConfig): PluginOption => {
+export const vitePluginLogger = (config: LoggerConfig): PluginOption => {
   return {
     enforce: "post",
     name: "vite-logger",
@@ -19,6 +19,7 @@ const vitePluginLogger = (config: LoggerConfig): PluginOption => {
         // ignore for requests specified in excludeReqType
         if (
           req.method &&
+          config.excludeReqType &&
           config.excludeReqType.find(
             (type) => type === req.method?.toLowerCase()
           )
@@ -39,5 +40,3 @@ const vitePluginLogger = (config: LoggerConfig): PluginOption => {
     },
   };
 };
-
-export default vitePluginLogger;
