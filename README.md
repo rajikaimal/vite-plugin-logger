@@ -15,7 +15,7 @@ import viteLogger from "vite-plugin-logger";
 export default defineConfig({
   plugins: [
     viteLogger({
-      msg: "LOGGING MSG",
+      msg: "LOG",
       logLevel: "info",
       excludeReqType: ["DELETE"],
     }),
