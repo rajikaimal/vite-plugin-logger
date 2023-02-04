@@ -1,0 +1,37 @@
+{
+  "name": "vite-plugin-logger",
+  "version": "1.0.0",
+  "description": "Vite logger plugin",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup index.ts --dts --format cjs,esm",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajikaimal/vite-plugin-logger.git"
+  },
+  "keywords": [
+    "vite",
+    "logger"
+  ],
+  "author": "rajikaimal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rajikaimal/vite-plugin-logger/issues"
+  },
+  "homepage": "https://github.com/rajikaimal/vite-plugin-logger#readme",
+  "peerDependencies": {
+    "vite": "^4.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "prettier": "^2.8.3",
+    "simple-node-logger": "^21.8.12",
+    "tsup": "^6.5.0",
+    "typescript": "^4.9.5",
+    "vite": "^4.1.1"
+  }
+}
