@@ -10,7 +10,7 @@ $ npm i -D vite-plugin-logger
 
 ```js
 import { defineConfig } from "vite";
-import viteLogger from "vite-plugin-logger";
+import { vitePluginLogger } from "vite-plugin-logger";
 
 export default defineConfig({
   plugins: [
