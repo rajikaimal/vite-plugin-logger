@@ -1,4 +1,4 @@
-import { ViteDevServer } from "vite";
+import { ViteDevServer, PluginOption } from "vite";
 
 interface LoggerConfig {
   msg: string;
@@ -9,7 +9,7 @@ interface LoggerConfig {
 type LogLevel = "info" | "warn" | "error";
 type ReqType = "get" | "post" | "patch" | "put" | "delete";
 
-const vitePluginLogger = (config: LoggerConfig) => {
+const vitePluginLogger = (config: LoggerConfig): PluginOption => {
   return {
     enforce: "post",
     name: "vite-logger",
