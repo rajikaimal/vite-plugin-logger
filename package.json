@@ -1,12 +1,13 @@
 {
   "name": "vite-plugin-logger",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Vite logger plugin",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsup index.ts --dts --format cjs,esm",
+    "publish": "tsup index.ts --dts --format cjs,esm && npm publish",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
